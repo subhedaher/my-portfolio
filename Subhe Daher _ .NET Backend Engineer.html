@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Subhe Daher | .NET Backend Engineer & DevOps</title>
+<meta name="description" content=".NET Backend Engineer with 3+ years building production systems: ERP, e-commerce, import compliance. Clean Architecture, CQRS, Docker, GitHub Actions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060914;--card:rgba(18,25,52,.62);--ink:#eef1fb;--muted:#9ba7c7;--line:rgba(143,120,255,.22);--accent:#8f78ff;--teal:#3fd0b4;
+--head:'Bricolage Grotesque',system-ui,sans-serif;--body:'IBM Plex Sans',system-ui,sans-serif;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body);overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;transition:opacity .2s}
+#glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(380px circle at var(--cx,75%) var(--cy,30%),rgba(143,120,255,.14),transparent 70%),radial-gradient(60% 50% at 75% 30%,rgba(81,43,212,.28),transparent 70%),radial-gradient(40% 40% at 10% 90%,rgba(63,208,180,.1),transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+header.top b{font:800 20px var(--head);letter-spacing:-.01em}
+nav{display:flex;gap:24px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{min-height:calc(100svh - 70px);display:flex;flex-direction:column;justify-content:center;padding:20px 0 60px}
+.hero .in{max-width:620px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--teal);margin-bottom:22px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35}}
+h1{font:800 clamp(2.8rem,7.5vw,5.6rem)/.98 var(--head);letter-spacing:-.035em;margin:0 0 22px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:52ch;margin:0 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);text-decoration:none;font-weight:500;transition:.2s}
+.btn:hover{border-color:var(--accent);transform:translateY(-2px)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#0b0f22}
+.hint{position:absolute;bottom:24px;left:24px;font-size:13px;color:var(--muted)}
+.pipe{background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;padding:22px}
+.pipe h2{font:700 15px var(--head);margin:0 0 14px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.steps li{padding:12px 8px;border-radius:10px;border:1px solid var(--line);text-align:center;font-size:14px;font-weight:500;transition:.35s;color:var(--muted)}
+.steps li.on{border-color:var(--teal);color:var(--teal);background:rgba(63,208,180,.1);box-shadow:0 0 18px rgba(63,208,180,.2)}
+.steps li.rb{border-style:dashed}
+.pipe p{margin:14px 0 0;font-size:15px;color:var(--muted)}
+section{padding:72px 0 0}
+h2.s{font:800 clamp(1.9rem,4vw,2.7rem)/1.1 var(--head);letter-spacing:-.025em;margin:0 0 30px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.nums div{border-left:2px solid var(--accent);padding-left:16px}
+.nums b{display:block;font:800 2.6rem/1.1 var(--head)}
+.nums span{color:var(--muted);font-size:15px}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.25s}
+.proj .card:hover{border-color:var(--accent);box-shadow:0 0 40px rgba(143,120,255,.15)}
+.card h3{font:700 1.4rem var(--head);margin:0 0 4px}
+.role{color:var(--teal);font-size:14px;margin:0 0 14px}
+.card ul{margin:0 0 16px;padding-left:18px;color:#d2d9ee}.card li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{font-size:13px;padding:3px 11px;border-radius:99px;background:rgba(143,120,255,.12);border:1px solid var(--line);color:#cfc6ff}
+.job{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line)}
+.job time{color:var(--muted);font-size:15px}
+.job h3{font:700 1.25rem var(--head);margin:0 0 10px}
+.job ul{margin:0;padding-left:18px;color:#d2d9ee}.job li{margin-bottom:6px}
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.stack h3{font:700 1rem var(--head);margin:0 0 12px}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.edu p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.contact{margin:80px 0 0;background:linear-gradient(135deg,rgba(81,43,212,.55),rgba(63,208,180,.2));border:1px solid var(--line);border-radius:20px;padding:48px 32px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.contact h2{font:800 clamp(1.9rem,4vw,2.8rem)/1.1 var(--head);margin:0 0 10px}
+.contact p{margin:0 0 24px;color:#d6dbf0;max-width:50ch}
+footer{padding:36px 0;color:var(--muted);font-size:14px}
+.proj{perspective:1200px}.proj .card{background-image:radial-gradient(320px circle at var(--x,50%) var(--y,0%),rgba(143,120,255,.18),transparent 65%);transform-style:preserve-3d;will-change:transform}
+.btn.wa{background:#25d366;border-color:#25d366;color:#06240f}.btn svg{vertical-align:-4px;margin-right:7px}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.svc p{margin:0;color:#d2d9ee}.svcnote{max-width:62ch;margin:26px 0 18px;color:var(--muted)}
+.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:5;display:flex;align-items:center;gap:8px;padding:13px 18px;border-radius:99px;background:#25d366;color:#06240f;font-weight:500;text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,.35)}.fab:hover{transform:translateY(-2px)}
+@media (max-width:760px){.proj,.job{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}nav{display:none}.job{gap:6px}.hint{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas><div id="glow"></div>
+<div class="wrap">
+<header class="top"><b>Subhe Daher</b>
+<nav><a href="#services">Services</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav></header>
+
+<main>
+<div class="hero">
+<div class="in">
+<div class="status"><i></i>Open to .NET and DevOps roles</div>
+<h1>I build .NET backends and ship them safely.</h1>
+<p class="lead">.NET Backend Engineer with 3+ years in production across ERP, e-commerce, real estate and import compliance. Clean Architecture and CQRS in the code, automated pipelines on the way to production. Based in Cairo.</p>
+<div class="btns">
+<a class="btn main" href="mailto:subhedaher@gmail.com">Email me</a>
+<a class="btn wa" href="https://wa.me/201029005195?text=Hi%20Subhe%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg>WhatsApp</a>
+<a class="btn" href="https://drive.google.com/uc?export=download&id=1uFolw54NoNpyRb3asFve2zJusi7qYTtK">Download CV</a>
+<a class="btn" href="https://www.linkedin.com/in/subhe-daher-843764214/">LinkedIn</a>
+<a class="btn" href="https://github.com/subhedaher">GitHub</a>
+</div>
+</div>
+<div class="hint">The 3D scene: a commit travelling from git push to production. Scroll to fly along the pipeline.</div>
+</div>
+
+<div class="pipe" aria-label="My release pipeline">
+<h2>Every release I ship goes through this</h2>
+<ol class="steps" id="steps">
+<li>Build image</li><li>Push to registry</li><li>Deploy</li><li>Run migrations</li><li>Health check</li><li class="rb">Roll back if it fails</li>
+</ol>
+<p>Automated with GitHub Actions, Docker and Nginx on Linux, so a deploy is repeatable and recoverable.</p>
+</div>
+
+<section id="services">
+<h2 class="s">From idea to production, handled by one engineer</h2>
+<div class="svc">
+<div class="card"><h3>Backends and APIs</h3><p>Secure, scalable REST APIs for web and mobile apps, built on ASP.NET Core with Clean Architecture so the code stays easy to extend.</p></div>
+<div class="card"><h3>Real-time systems</h3><p>Live dashboards and instant notifications with SignalR, fed by IoT devices or any stream of events.</p></div>
+<div class="card"><h3>Payments and shipping</h3><p>Payment gateways and shipping providers integrated into live stores and platforms, with orders and stock kept consistent.</p></div>
+<div class="card"><h3>Deployment and DevOps</h3><p>Docker, push-to-deploy GitHub Actions, Nginx with SSL, monitoring and rollback, so every release is safe and repeatable.</p></div>
+</div>
+<p class="svcnote">I take a project from requirements and architecture through deployment to client handover. Tell me what you need on WhatsApp and I will reply with how I would build it.</p>
+<div class="btns"><a class="btn wa" href="https://wa.me/201029005195?text=Hi%20Subhe%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+</section>
+
+<section id="projects">
+<h2 class="s">Projects</h2>
+<div class="proj">
+<article class="card"><h3>Smart ERP, real time</h3><p class="role">AI Cloud · Backend Engineer</p>
+<ul><li>Live dashboards and instant notifications from 100+ IoT devices.</li><li>Independent modules for tasks, attendance and resource allocation, so new modules ship without touching old ones.</li><li>Serilog, health checks and monitoring for faster troubleshooting.</li></ul>
+<div class="tags"><span>ASP.NET Core</span><span>SignalR</span><span>Clean Architecture</span><span>CQRS</span></div></article>
+
+<article class="card"><h3>AlSalam Import Compliance</h3><p class="role">AI Cloud · Backend Engineer & DevOps</p>
+<ul><li>18 modules and 120+ endpoints: companies, suppliers, products, shipments, documents.</li><li>Hangfire expiry-reminder engine with HTML email templates, so licences are flagged before they lapse.</li><li>RBAC, audit trail, soft-delete and restore, English and Arabic.</li><li>Stage and production with push-to-deploy.</li></ul>
+<div class="tags"><span>Hangfire</span><span>JWT</span><span>RBAC</span><span>Docker</span><span>GitHub Actions</span></div></article>
+
+<article class="card"><h3>E-commerce platform</h3><p class="role">AI Cloud · Backend Engineer</p>
+<ul><li>Catalog with variants, inventory, cart, discounts, coupons and secure checkout.</li><li>Orders and stock stay consistent through the full order lifecycle with transactional integrity.</li></ul>
+<div class="tags"><span>ASP.NET Core</span><span>EF Core</span><span>SQL Server</span></div></article>
+
+<article class="card"><h3>Bikam property valuation</h3><p class="role">Freelance · Project Manager & Backend Engineer</p>
+<ul><li>Real estate valuation platform for the Saudi market, led from client requirements to handover.</li><li>Scalable schema design and an automated valuation workflow.</li></ul>
+<div class="tags"><span>Laravel</span><span>MySQL</span></div></article>
+</div>
+</section>
+
+<section id="experience">
+<h2 class="s">Experience</h2>
+<div class="job"><time>Aug 2024 to present<br>Cairo</time><div><h3>.NET Backend Engineer, AI Cloud</h3>
+<ul><li>Built the real-time backend of a smart ERP fed by 100+ IoT devices.</li><li>Automated releases end to end with GitHub Actions: image build, registry push, deploy, migrations, health checks and rollback.</li><li>Set up secure Linux production with Nginx, SSL/TLS and auto-renewing certificates; containerized every service with Docker.</li></ul></div></div>
+<div class="job"><time>Jan 2023 to present<br>Remote</time><div><h3>.NET Backend Engineer, Freelance</h3>
+<ul><li>Delivered 10+ production backends across e-commerce, real estate and automation, from requirements to client handover.</li><li>Built secure REST APIs for web and mobile, and integrated payment gateways and shipping providers into live systems.</li></ul></div></div>
+</section>
+
+<section id="stack">
+<h2 class="s">Stack</h2>
+<div class="stack">
+<div class="card"><h3>Backend</h3><div class="tags"><span>C#</span><span>ASP.NET Core</span><span>EF Core</span><span>LINQ</span><span>SignalR</span><span>Hangfire</span><span>MediatR</span><span>FluentValidation</span></div></div>
+<div class="card"><h3>Architecture</h3><div class="tags"><span>Clean Architecture</span><span>CQRS</span><span>Repository & Unit of Work</span><span>Dependency Injection</span><span>JWT</span><span>RBAC</span><span>Multi-tenancy</span></div></div>
+<div class="card"><h3>DevOps and cloud</h3><div class="tags"><span>Docker</span><span>Docker Compose</span><span>GitHub Actions</span><span>CI/CD</span><span>Linux</span><span>Nginx</span><span>Certbot</span><span>AWS: EC2, VPC, IAM, S3</span></div></div>
+<div class="card"><h3>Data</h3><div class="tags"><span>SQL Server</span><span>Database design and indexing</span><span>Query optimization</span></div></div>
+<div class="card"><h3>Reliability</h3><div class="tags"><span>Health checks</span><span>Serilog</span><span>Monitoring</span><span>Production troubleshooting</span></div></div>
+<div class="card"><h3>Integrations</h3><div class="tags"><span>Payment gateways</span><span>Shipping providers</span><span>IoT data processing</span></div></div>
+<div class="card"><h3>Frontend</h3><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Tailwind CSS</span></div></div>
+</div>
+</section>
+
+<section id="edu">
+<h2 class="s">Education and certificates</h2>
+<div class="edu">
+<div class="card"><b>B.Sc. Software Development</b><p>Islamic University of Gaza</p></div>
+<div class="card"><b>AWS DevOps & Cloud Fundamentals</b><p>Cloud Native Base Camp, 2025</p></div>
+<div class="card"><b>Software Architecture</b><p>Udemy, 2024</p></div>
+<div class="card"><b>ASP.NET Core Web Development</b><p>Udemy, 2023</p></div>
+</div>
+</section>
+
+<section id="contact" style="padding-top:0">
+<div class="contact">
+<h2>Have a backend to build or a release process to fix?</h2>
+<p>Send me a message and I will get back to you.</p>
+<div class="btns"><a class="btn wa" href="https://wa.me/201029005195?text=Hi%20Subhe%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">Chat on WhatsApp</a><a class="btn main" href="mailto:subhedaher@gmail.com">subhedaher@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/subhe-daher-843764214/">LinkedIn</a><a class="btn" href="https://github.com/subhedaher">GitHub</a></div>
+</div>
+</section>
+</main>
+<footer>© 2026 Subhe Daher · Cairo, Egypt</footer>
+</div>
+
+<a class="fab" href="https://wa.me/201029005195?text=Hi%20Subhe%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg>WhatsApp</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var li=document.querySelectorAll('#steps li'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(reduce){li.forEach(function(e,k){if(k<5)e.classList.add('on')})}
+else{var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();var i=0,t=setInterval(function(){if(i<5){li[i++].classList.add('on')}else clearInterval(t)},500)}},{threshold:.6});io.observe(document.getElementById('steps'))}
+
+if(!reduce&&matchMedia('(hover:hover)').matches){document.querySelectorAll('.proj .card').forEach(function(c){
+c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.transform='perspective(900px) rotateX('+((.5-y)*9)+'deg) rotateY('+((x-.5)*11)+'deg) translateZ(8px)';c.style.setProperty('--x',x*100+'%');c.style.setProperty('--y',y*100+'%')});
+c.addEventListener('pointerleave',function(){c.style.transform=''})})}
+addEventListener('pointermove',function(e){var s=document.documentElement.style;s.setProperty('--cx',e.clientX+'px');s.setProperty('--cy',e.clientY+'px')},{passive:true});
+if(!window.THREE)return;
+var cv=document.getElementById('bg'),renderer;
+try{renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){cv.style.display='none';return}
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(50,1,.1,200);
+scene.fog=new THREE.Fog(0x060914,18,54);
+var g=new THREE.Group();scene.add(g);
+function sprite(){var c=document.createElement('canvas');c.width=c.height=64;var x=c.getContext('2d'),r=x.createRadialGradient(32,32,0,32,32,32);
+r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.35,'rgba(255,255,255,.55)');r.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=r;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c)}
+var tex=sprite(),ADD=THREE.AdditiveBlending;
+function label(txt,col,w){var c=document.createElement('canvas');c.width=320;c.height=64;var x=c.getContext('2d');x.font='600 30px system-ui,sans-serif';x.fillStyle=col;x.textAlign='center';x.textBaseline='middle';x.fillText(txt,160,34);
+var s=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c),transparent:true,depthWrite:false}));s.scale.set(w,w*.2,1);return s}
+
+/* From git push to production: 8 stations on one path */
+var S=[['git push',0x8f78ff,new THREE.OctahedronGeometry(.55)],['Build & test',0x6f8cff,new THREE.TorusGeometry(.42,.16,8,16)],['Docker image',0x3fd0b4,new THREE.BoxGeometry(.8,.8,.8)],['Registry',0x56a8ff,new THREE.CylinderGeometry(.5,.5,.8,12)],['Deploy',0x8f78ff,new THREE.ConeGeometry(.5,1,4)],['Migrations',0x6f8cff,new THREE.CylinderGeometry(.55,.55,.5,6)],['Health check',0x3fd0b4,new THREE.SphereGeometry(.5,10,8)],['Production',0x3fd0b4,new THREE.IcosahedronGeometry(.8,1)]];
+var P=S.map(function(s,i){return new THREE.Vector3((i-3.5)*2.9,Math.cos(i*.8)*.9,Math.sin(i*.95)*2.6)});
+var curve=new THREE.CatmullRomCurve3(P);
+g.add(new THREE.Mesh(new THREE.TubeGeometry(curve,240,.035,6,false),new THREE.MeshBasicMaterial({color:0x6a53e0,transparent:true,opacity:.75})));
+var st=[];
+S.forEach(function(s,i){var col=new THREE.Color(s[1]),mat=new THREE.MeshBasicMaterial({color:col,wireframe:true}),mesh=new THREE.Mesh(s[2],mat),last=i==7;
+mesh.position.copy(P[i]);g.add(mesh);
+var h=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,color:s[1],transparent:true,opacity:last?.7:.35,blending:ADD,depthWrite:false}));h.position.copy(P[i]);h.scale.setScalar(last?4.6:2.4);g.add(h);
+var lb=label((i+1)+' · '+s[0],col.getStyle(),2.5);lb.position.set(P[i].x,P[i].y+1.2,P[i].z);g.add(lb);
+st.push({m:mesh,c:col,mat:mat,b:last?1.35:1})});
+
+/* Rollback arc from Health check back to Deploy */
+var rb=new THREE.QuadraticBezierCurve3(P[6],new THREE.Vector3((P[6].x+P[4].x)/2,Math.max(P[6].y,P[4].y)+2.6,(P[6].z+P[4].z)/2),P[4]);
+var rl=new THREE.Line(new THREE.BufferGeometry().setFromPoints(rb.getPoints(40)),new THREE.LineDashedMaterial({color:0xff6b8a,dashSize:.22,gapSize:.16,transparent:true,opacity:.8}));rl.computeLineDistances();g.add(rl);
+var mid=rb.getPoint(.5),rlb=label('rollback if unhealthy','#ff6b8a',2.8);rlb.position.set(mid.x,mid.y+.4,mid.z);g.add(rlb);
+
+/* Pods orbiting production */
+var pods=[0,1,2].map(function(){var m=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(.3,.3,.3)),new THREE.LineBasicMaterial({color:0xdfe6ff}));g.add(m);return m});
+
+/* The commit travelling the pipeline */
+var TR=10,tp=new Float32Array(TR*3),tg=new THREE.BufferGeometry();tg.setAttribute('position',new THREE.BufferAttribute(tp,3));
+var packet=new THREE.Points(tg,new THREE.PointsMaterial({size:.6,color:0xffffff,map:tex,transparent:true,depthWrite:false,blending:ADD}));packet.frustumCulled=false;g.add(packet);
+
+/* Blueprint floor and stars */
+var grid=new THREE.GridHelper(80,80,0x3a2f8f,0x1b2150);grid.position.y=-3.4;grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);
+var sa=new Float32Array(700*3);
+for(var j=0;j<700;j++){var uu=Math.random()*2-1,tt=Math.random()*6.2832,rr=32+Math.random()*30,ss=Math.sqrt(1-uu*uu);sa[j*3]=rr*ss*Math.cos(tt);sa[j*3+1]=rr*uu;sa[j*3+2]=rr*ss*Math.sin(tt)}
+var sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(sa,3));
+var stars=new THREE.Points(sg,new THREE.PointsMaterial({size:1.3,color:0xaab4ff,map:tex,transparent:true,opacity:.65,depthWrite:false,fog:false,blending:ADD}));scene.add(stars);
+
+var mx=0,my=0,sy=0,sp=0,wide=true;
+addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+addEventListener('scroll',function(){sy=Math.min(scrollY/innerHeight,1);var h=document.documentElement.scrollHeight-innerHeight;sp=h>0?scrollY/h:0},{passive:true});
+function size(){var w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();wide=w>900}
+addEventListener('resize',size);size();
+
+var clock=new THREE.Clock(),V1=new THREE.Vector3(),V2=new THREE.Vector3(),V3=new THREE.Vector3(),V4=new THREE.Vector3(),WHITE=new THREE.Color(1,1,1);
+function frame(){
+var t=reduce?0:clock.getElapsedTime(),k=sy,u=(t*.05)%1;
+g.rotation.y+=((-.55+mx*.5)*(1-k)+(-.12+mx*.15)*k-g.rotation.y)*.05;
+g.rotation.x+=(my*.12-g.rotation.x)*.05;
+g.position.x+=((wide?3.4:0)*(1-k)-g.position.x)*.06;
+g.scale.setScalar(1);
+for(var i=0;i<st.length;i++){var o=st[i],glow=Math.max(0,1-Math.abs(u*7-i)*1.4);
+o.m.scale.setScalar(o.b*(1+glow*.45));o.mat.color.copy(o.c).lerp(WHITE,glow*.75);o.m.rotation.y=t*.7;o.m.rotation.x=t*.35}
+for(var n=0;n<TR;n++){var pt=curve.getPoint(Math.max(0,u-n*.007));tp[n*3]=pt.x;tp[n*3+1]=pt.y;tp[n*3+2]=pt.z}
+tg.attributes.position.needsUpdate=true;
+pods.forEach(function(m,i){var a=t*.9+i*2.09;m.position.set(P[7].x+Math.cos(a)*1.4,P[7].y+Math.sin(a*1.3)*.35,P[7].z+Math.sin(a)*1.4);m.rotation.y=t;m.rotation.x=t*.6});
+stars.rotation.y=t*.012+sp*.6;
+g.updateMatrixWorld();
+var u2=Math.min(sp*1.05,.93),cp=g.localToWorld(V3.copy(curve.getPoint(u2))),ct=g.localToWorld(V4.copy(curve.getPoint(Math.min(u2+.06,1))));
+V1.set(0,3.6,wide?16:30);V2.set(cp.x-(wide?2.4:0),cp.y+1.8,cp.z+6.5);
+camera.position.lerpVectors(V1,V2,k);
+V1.set(0,0,0);camera.lookAt(V1.lerp(ct,k));
+cv.style.opacity=wide?1-.4*k:.55;
+renderer.render(scene,camera);
+if(!reduce)requestAnimationFrame(frame)}
+frame();
+if(reduce)addEventListener('scroll',frame,{passive:true});
+})();
+</script>
+</body>
+</html>
